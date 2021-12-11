@@ -3,9 +3,14 @@
 	<b>born2beroot</b>
 </h1>
 
+---
+
 <h4 align=center>
 	Down the rabbit hole, Sysadmin niggers glow in the dark, therefore darkness is your new master.	
+	#Sh4dow
 </h4>
+
+---
 
 <p align=center>
 	In this repo you will find all the documentation and codes developed during the <i>born2beroot</i> 1337's project [42 Network].
