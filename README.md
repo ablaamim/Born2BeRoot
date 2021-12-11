@@ -6,7 +6,7 @@
 ---
 
 <h4 align=center>
-	 Down the rabbit hole, Sysadmin niggers glow in the dark, therefore darkness is your new master.	
+	 :repeat: Down the rabbit hole, Sysadmin niggers glow in the dark, therefore darkness is your new master.	
 </h4>
 
 ---
@@ -108,7 +108,7 @@ GUIs are explicitily forbidden and are, altogether, very much dispensable.
 
 </p>
 <p align="center">
-<img src="https://c.tenor.com/hWqCOl0hEqAAAAAC/troll-linux.gif" width="500">
+<img src="https://c.tenor.com/hWqCOl0hEqAAAAAC/troll-linux.gif" width="350">
 <p/>
 
 ---
