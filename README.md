@@ -51,7 +51,7 @@ Bonus
 
 ---
 
-#### THIS IS A COMPLETE GUIDELINE THROUGH THE PROJECT [STEP BY STEP BABY-SITTING].
+#### :100: THIS IS A COMPLETE GUIDELINE THROUGH THE PROJECT [STEP BY STEP BABY-SITTING].
 
 ---
 
@@ -113,4 +113,4 @@ GUIs are explicitily forbidden and are, altogether, very much dispensable.
 
 ---
 
-> The Dark Side is Unrealized Potential, losethose who despise SUDO.
+> The dark side is unrealized potential, losethose who despise SUDO.
