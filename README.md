@@ -12,7 +12,7 @@
 ---
 
 <p align=center>
-	In this repo you will find all the documentation and codes developed during the <i>born2beroot</i> 1337's project [42 Network].
+	In this repo you will find all the documentation and codes developed during the <i>born2beroot 1337's project</i>.
 </p>
 
 ---
@@ -79,20 +79,23 @@ Bonus
 ##### :heavy_check_mark: LVM :
 
 • You must correctly set-up partitions choosing Manual configuration, according to specific instructions (at this point, you can choose to create the Mandatory
-part's partitioning, or the Bonus part's one. I chose the Bonus one). Once you choose the hard drive to partition and click yes. 
-Now you must choose your available free space to start partitioning. GO on Create new partition for \boot with the specified size.
+part's partitioning, or the Bonus part's one. I chose the Bonus one). 
+Once you choose the hard drive to partition and click yes. 
+Now you must choose your available free space to start partitioning. 
+GO on Create new partition for \boot with the specified size.
 Choose primary(this is a Standard Partition) at the beggining of the available space.
 
 •To set up the Logical Volumes you need to undestand the basics of what a LVM really is (see below for more on LVM). 
-You will choose the next available free space and configure it as a 'physical volume for encryption'. Then, you must 
-choose to 'configure encrypted volumes'>'created encrypted volumes'>'choose volumes to encrypt'>'finish' so that the partition will be overwritten 
-with random data. When it is done, you will be asked to type in the passphrase to protect your Encrypted Disk.
+You will choose the next available free space and configure it as a 'physical volume for encryption'. 
+Then, you must choose to 'configure encrypted volumes'>'created encrypted volumes'>'choose volumes to encrypt'>'finish' so that the partition will be overwritten 
+with random data. 
+When it is done, you will be asked to type in the passphrase to protect your Encrypted Disk.
 
 •After encrypting the partition, you will have to declare it a Volume Group by going to 'Configure the Logical Volume Manager',
 then write the changes on disk, create a Logical Group, name it, select the partition to do it and finally create the Logical Volumes one by one by giving
-it a name, set its size and create them with the specifications declared on the project. At the end, you can display the volumes created. I use ext4 as a filesystem 
-to the Logical Volumes in this part. Click on 'Finish'. At last, don't forget to mount the volumes by clicking on each of them and choosing 
-a correct mount point before finishing the partitioning.
+it a name, set its size and create them with the specifications declared on the project. At the end, you can display the volumes created. 
+I use ext4 as a filesystem to the Logical Volumes in this part. 
+Click on 'Finish'. At last, don't forget to mount the volumes by clicking on each of them and choosing a correct mount point before finishing the partitioning.
 
 •Now you make sure to be scanning for new packages and to set your location correctly to configure the apt package manager 
 (this is Debian's default, but you can change it for appititude later if you wish).
