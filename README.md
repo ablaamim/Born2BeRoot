@@ -6,7 +6,7 @@
 ---
 
 <h4 align=center>
-	> Down the rabbit hole, Sysadmin niggers glow in the dark, therefore darkness is your new master.	
+	 Down the rabbit hole, Sysadmin niggers glow in the dark, therefore darkness is your new master.	
 </h4>
 
 ---
@@ -62,7 +62,7 @@ Bonus
 
 ---
 
-#### STEP 1 - VirtualMachine installation and setup.
+#### :heavy_check_mark: STEP 1 - VirtualMachine installation and setup.
 
 ---
 
@@ -76,7 +76,7 @@ Bonus
 
 • Set up users and passwords by choosing a strong Root Password (again, this password will be changed during the project).
 
-##### LVM :
+##### :heavy_check_mark: LVM :
 
 • You must correctly set-up partitions choosing Manual configuration, according to specific instructions (at this point, you can choose to create the Mandatory
 part's partitioning, or the Bonus part's one. I chose the Bonus one). Once you choose the hard drive to partition and click yes. 
@@ -104,7 +104,7 @@ GUIs are explicitily forbidden and are, altogether, very much dispensable.
 
 ---
 
-#### Installing SUDO && adding user in groups !
+#### :heavy_check_mark: Installing SUDO && adding user in groups !
 
 </p>
 <p align="center">
