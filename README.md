@@ -1,4 +1,3 @@
-
 <h1 align=center>
 	<b>born2beroot</b>
 </h1>
@@ -51,7 +50,7 @@ Bonus
 
 ---
 
-#### :100: THIS IS A COMPLETE GUIDELINE THROUGH THE PROJECT [STEP BY STEP BABY-SITTING].
+#### :100: THIS IS A COMPLETE GUIDELINE THROUGH THE PROJECT, DETAILED AND PUT ON POINT. [STEP BY STEP BABY-SITTING].
 
 ---
 
@@ -62,27 +61,27 @@ Bonus
 
 ---
 
-#### :heavy_check_mark: STEP 1 - VirtualMachine installation and setup.
+#### :heavy_check_mark: STEP 1 - VirtualMachine installation and setup [Behold the mighty VM].
 
 ---
 
-• In order to create a virtual disk you should use goinfre as your machine folder.
+• In order to create a virtual disk you should use goinfre as your machine image folder.
 
-• You should select "Install" option, without GUI.
+• You should select "Install" option, without GRAPHICAL USER INTERFACE.
 
-• Hostname : yourlogin42.
+• Hostname : yourlogin42 [intra].
 
-• Domain name : leave empty.
+• Domain name : Leave empty.
 
-• Set up users and passwords by choosing a strong Root Password (again, this password will be changed during the project).
+• Set up users and passwords by choosing a strong Root Password (Again, this password will be changed during the project && Evaluation).
 
-##### :heavy_check_mark: LVM :
+##### :heavy_check_mark: LVM [LOGICAL VOLUME MANAGER]:
 
 • You must correctly set-up partitions choosing Manual configuration, according to specific instructions (at this point, you can choose to create the Mandatory
-part's partitioning, or the Bonus part's one. I chose the Bonus one). 
-Once you choose the hard drive to partition and click yes. 
-Now you must choose your available free space to start partitioning. 
-GO on Create new partition for \boot with the specified size.
+part's partitioning, or the Bonus part's one. I chose the Bonus one).
+Once you choose the hard drive to partition and click yes.
+Now you must choose your available free space to start partitioning.
+GO on Create new partition for \boot with a specified size.
 Choose primary(this is a Standard Partition) at the beggining of the available space.
 
 •To set up the Logical Volumes you need to undestand the basics of what a LVM really is (see below for more on LVM). 
