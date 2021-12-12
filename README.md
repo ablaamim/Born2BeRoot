@@ -84,29 +84,29 @@ Now you must choose your available free space to start partitioning.
 GO on Create new partition for \boot with a specified size.
 Choose primary(this is a Standard Partition) at the beggining of the available space.
 
-•To set up the Logical Volumes you need to undestand the basics of what a LVM really is (see below for more on LVM). 
+• To set up the Logical Volumes you need to undestand the basics of what a LVM really is (see below for more on LVM). 
 You will choose the next available free space and configure it as a 'physical volume for encryption'. 
 Then, you must choose to 'configure encrypted volumes'>'created encrypted volumes'>'choose volumes to encrypt'>'finish' so that the partition will be overwritten 
 with random data. 
 When it is done, you will be asked to type in the passphrase to protect your Encrypted Disk.
 
-•After encrypting the partition, you will have to declare it a Volume Group by going to 'Configure the Logical Volume Manager',
+• After encrypting the partition, you will have to declare it a Volume Group by going to 'Configure the Logical Volume Manager',
 then write the changes on disk, create a Logical Group, name it, select the partition to do it and finally create the Logical Volumes one by one by giving
 it a name, set its size and create them with the specifications declared on the project. At the end, you can display the volumes created. 
 I use ext4 as a filesystem to the Logical Volumes in this part. 
 Click on 'Finish'. At last, don't forget to mount the volumes by clicking on each of them and choosing a correct mount point before finishing the partitioning.
 
-•Now you make sure to be scanning for new packages and to set your location correctly to configure the apt package manager 
+• Now you make sure to be scanning for new packages and to set your location correctly to configure the apt package manager 
 (this is Debian's default, but you can change it for appititude later if you wish).
 
-•In the next step you must make sure you are not installing any graphical interface to your Debian OS. Since our goal is to set up a server, 
+• In the next step you must make sure you are not installing any graphical interface to your Debian OS. Since our goal is to set up a server, 
 GUIs are explicitily forbidden and are, altogether, very much dispensable.
 
-•Install the GRUB boot loader and, when that's done, finally reboot your new system so you're now all set!
+• Install the GRUB boot loader and, when that's done, finally reboot your new system so you're now all set!
 
 ---
 
-#### :heavy_check_mark: Installing SUDO && adding user in groups !
+#### :heavy_check_mark: Installing SUDO && adding user in groups ! [SUPER USER DO]
 
 </p>
 <p align="center">
@@ -116,3 +116,6 @@ GUIs are explicitily forbidden and are, altogether, very much dispensable.
 ---
 
 > The dark side is unrealized potential, losethose who despise SUDO.
+> CHAPTER 0, PASSAGE 0.1 : "SUDO SU, ON YOUR KNEES NORMAL USER".
+
+---
