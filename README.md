@@ -132,3 +132,10 @@ Adding a user in group :
 
 > $ usermod -aG sudo <username>
 
+Give prvillege as SU :
+
+> $ sudo visudo
+
+```
+ADD THIS SPECIFIC LINE IN THE FILE your_username    ALL=(ALL) ALL
+```
