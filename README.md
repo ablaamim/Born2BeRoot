@@ -167,7 +167,7 @@ Check the SSH installation:
 
 > $ dpkg -l | grep ssh
 
-SSH settings are simple and require small changes to existing code lines [DUMB, YET BUT THEY TEND TO DROPE TEARS]:
+> SSH settings are simple and require small changes to existing code lines [DUMB, YET BUT THEY TEND TO DROPE TEARS]:
 
 > $ vim /etc/ssh/sshd_config
 
