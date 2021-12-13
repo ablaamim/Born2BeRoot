@@ -139,3 +139,16 @@ Give prvillege as SU :
 ```
 ADD THIS SPECIFIC LINE IN THE FILE your_username    ALL=(ALL) ALL
 ```
+
+---
+
+> CONGRATS YOU BECAME A SUDOER NOW!
+
+--- 
+
+</p>
+<p align="center">
+<img src="https://i.redd.it/90wtchmn0zg51.jpg" width="350">
+<p/>
+
+---
