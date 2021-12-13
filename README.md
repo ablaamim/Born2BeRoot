@@ -61,7 +61,7 @@ Bonus
 
 ---
 
-#### :heavy_check_mark: STEP 1 - VirtualMachine installation and setup [Behold the mighty VM].
+#### :heavy_check_mark: VirtualMachine installation and setup [Behold the mighty VM].
 
 ---
 
@@ -137,7 +137,8 @@ Give prvillege as SU :
 > $ sudo visudo
 
 ```
-ADD THIS SPECIFIC LINE IN THE FILE your_username    ALL=(ALL) ALL
+ADD THIS SPECIFIC LINE IN THE FILE : 
+>	your_username    ALL=(ALL) ALL
 ```
 
 ---
@@ -154,7 +155,7 @@ ADD THIS SPECIFIC LINE IN THE FILE your_username    ALL=(ALL) ALL
 
 ---
 
-#### :heavy_check_mark: Installing SSH and configuring SSH service:
+#### :heavy_check_mark: Installing SSH and configuring SSH service :
 
 ---
 
@@ -175,8 +176,60 @@ SSH settings are simple and require small changes to existing code lines [DUMB, 
 > On line 32 we will have the comment: #PermitRootLogin prohibit-password, change it to:
 > 32	PermitRootLogin no
 
+---
 
+</p>
+<p align="center">
+<img src="https://i.imgur.com/WjJmGIJ.png" width="350">
+<p/>
 
+---
+
+#### :heavy_check_mark: Installing and Configuring UFW :
+
+---
+
+Perform the UFW installation :
+
+> $ sudo apt-get install ufw
+
+Enable UFW :
+
+> $ sudo ufw enable
+
+Allow connections to your server through port 4242:
+
+> $ ufw allow 4242
+
+Check the UFW settings:
+
+> $ ufw status
+
+> $ dpkg -l | grep ufw
+
+---
+
+#### :heavy_check_mark: Network adapter configuration :
+
+---
+
+Add forward rule for VirtualBox :
+
+> 1. Go to VirtualBox-> Choose the VM->Select Settings
+> 2. Choose “Network”-> “Adapter 1"->”Advanced”->”Port Forwarding”
+> 3. Add new rule (little green button on right top side) and next parameters:
+
+**************************************************************************
+* Protocol       Host IP       Host Port       Guest IP       Guest Port *
+* TCP            127.0.0.1     4242            10.0.2.15      4242       *
+**************************************************************************
+
+> 4. In your host (physical) machine open Terminal and run
+[ssh <vmusername>@localhost -p 4242]
+
+Now you can control your virtual machine from the host terminal!
+
+---
 
 
 
