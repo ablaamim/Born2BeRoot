@@ -119,3 +119,16 @@ GUIs are explicitily forbidden and are, altogether, very much dispensable.
 > CHAPTER 0, PASSAGE 0.1 : "SUDO SU, ON YOUR KNEES NORMAL USER".
 
 ---
+
+Perform the sudo installation :
+
+> $ apt-get install sudo
+
+Check sudo installation :
+
+> $ dpkg -l sudo
+
+Adding a user in group :
+
+> $ usermod -aG sudo <username>
+
