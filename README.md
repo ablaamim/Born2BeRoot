@@ -130,7 +130,7 @@ Check sudo installation :
 
 Adding a user in group :
 
-> $ usermod -aG sudo <username>
+> $ usermod -aG sudo "username"
 
 Give prvillege as SU :
 
@@ -142,13 +142,43 @@ ADD THIS SPECIFIC LINE IN THE FILE your_username    ALL=(ALL) ALL
 
 ---
 
-> CONGRATS YOU BECAME A SUDOER NOW!
-
---- 
-
 </p>
 <p align="center">
 <img src="https://i.redd.it/90wtchmn0zg51.jpg" width="350">
 <p/>
 
 ---
+
+> But due to sudoers wickedness, God was unable to be born properly. He was supposed to be born to be ROOT in the womb of the Holy Mother,
+ Until the time of the Awakening... His first words were "S U D O".
+
+---
+
+#### :heavy_check_mark: Installing SSH and configuring SSH service:
+
+---
+
+Perform the SSH installation :
+
+> $ sudo apt-get install openssh-server
+
+Check the SSH installation:
+
+> $ dpkg -l | grep ssh
+
+SSH settings are simple and require small changes to existing code lines [DUMB, YET BUT THEY TEND TO DROPE TEARS]:
+
+> $ vim /etc/ssh/sshd_config
+
+> In line 13 we will have the comment: #Port 22, change it to Port 4242.
+> 13	Port 4242
+> On line 32 we will have the comment: #PermitRootLogin prohibit-password, change it to:
+> 32	PermitRootLogin no
+
+
+
+
+
+
+
+ 
