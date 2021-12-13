@@ -170,8 +170,11 @@ Check the SSH installation:
 > $ vim /etc/ssh/sshd_config
 
 > In line 13 we will have the comment: #Port 22, change it to Port 4242.
+
 > 13	Port 4242
+
 > On line 32 we will have the comment: #PermitRootLogin prohibit-password, change it to:
+
 > 32	PermitRootLogin no
 
 ---
@@ -195,11 +198,11 @@ Enable UFW :
 
 > $ sudo ufw enable
 
-Allow connections to your server through port 4242:
+Allow connections to your server through port 4242 :
 
 > $ ufw allow 4242
 
-Check the UFW settings:
+Check the UFW settings :
 
 > $ ufw status
 
@@ -214,7 +217,9 @@ Check the UFW settings:
 Add forward rule for VirtualBox :
 
 > 1. Go to VirtualBox-> Choose the VM->Select Settings
+
 > 2. Choose “Network”-> “Adapter 1"->”Advanced”->”Port Forwarding”
+
 > 3. Add new rule (little green button on right top side) and next parameters:
 
 **************************************************************************
