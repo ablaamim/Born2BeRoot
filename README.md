@@ -167,8 +167,6 @@ Check the SSH installation:
 
 > $ dpkg -l | grep ssh
 
-> SSH settings are simple and require small changes to existing code lines [DUMB, YET BUT THEY TEND TO DROPE TEARS]:
-
 > $ vim /etc/ssh/sshd_config
 
 > In line 13 we will have the comment: #Port 22, change it to Port 4242.
