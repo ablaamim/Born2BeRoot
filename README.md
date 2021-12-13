@@ -222,10 +222,12 @@ Add forward rule for VirtualBox :
 
 > 3. Add new rule (little green button on right top side) and next parameters:
 
+```
 **************************************************************************
 * Protocol       Host IP       Host Port       Guest IP       Guest Port *
 * TCP            127.0.0.1     4242            10.0.2.15      4242       *
 **************************************************************************
+```
 
 > 4. In your host (physical) machine open Terminal and run
 [ssh <vmusername>@localhost -p 4242]
