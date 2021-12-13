@@ -171,11 +171,11 @@ Check the SSH installation:
 
 > In line 13 we will have the comment: #Port 22, change it to Port 4242.
 
-> 13	Port 4242
+> $ 13	Port 4242
 
 > On line 32 we will have the comment: #PermitRootLogin prohibit-password, change it to:
 
-> 32	PermitRootLogin no
+> $ 32	PermitRootLogin no
 
 ---
 
