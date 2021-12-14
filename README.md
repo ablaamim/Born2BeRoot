@@ -1,5 +1,5 @@
 <h1 align=center>
-	<b>born2beroot</b>
+	<b>Born2BeRoot</b>
 </h1>
 
 ---
@@ -258,8 +258,4 @@ Add forward rule for VirtualBox :
 Now you can control your virtual machine from the host terminal!
 
 ---
-
-
-
-
  
