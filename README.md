@@ -73,6 +73,15 @@ Bonus
 > A : A virtual machine works through virtualization technology, the hypervisor creates a sandboxed environement that behaves like 
 a separate computer with virtual hardware (All simulated through the hypervisor).
 
+> Q : Why Debian ?
+
+> A : It is easier to install and configure than CENTOS.
+
+> Q : What is the difference between Debian and CENTOS :
+
+> A : Debian, in addition to being more user-friendly, has a wide distribution, so its support is easier. CentOs, on the other hand,
+ is aimed at the business sector, having more stability, but with less support and updates.
+
 ---
 
 #### :heavy_check_mark: VirtualMachine installation and setup : [Behold the mighty VM!].
