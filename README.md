@@ -50,7 +50,7 @@ Bonus
 
 ---
 
-#### :100: THIS IS A COMPLETE GUIDELINE THROUGH THE PROJECT, DETAILED AND PUT ON POINT. [STEP BY STEP BABY-SITTING].
+#### :100: THIS IS A COMPLETE GUIDELINE THROUGH THE PROJECT, DETAILED AND PUT ON POINT. [CALL IT A STEP BY STEP BABY-SITTING].
 
 ---
 
@@ -61,7 +61,21 @@ Bonus
 
 ---
 
-#### :heavy_check_mark: VirtualMachine installation and setup [Behold the mighty VM].
+> “Wisdom is not a product of schooling but of the lifelong attempt to acquire it.”
+― Albert Einstein
+
+---
+
+#### :ok_hand: Poject overview : [Q&&A]
+
+> Q : How a virtual machine works ?
+
+> A : A virtual machine works through virtualization technology, the hypervisor creates a sandboxed environement that behaves like 
+a separate computer with virtual hardware (All simulated through the hypervisor).
+
+---
+
+#### :heavy_check_mark: VirtualMachine installation and setup : [Behold the mighty VM!].
 
 ---
 
