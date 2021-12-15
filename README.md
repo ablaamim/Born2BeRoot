@@ -286,7 +286,7 @@ Now you can control your virtual machine from the host terminal!
 
 </p>
 <p align="center">
-<img src="https://img-9gag-fun.9cache.com/photo/aGjg7oZ_700bwp.webp" width="350">
+<img src="https://img-9gag-fun.9cache.com/photo/aGjg7oZ_700bwp.webp" width="500">
 <p/>
 
 ---
