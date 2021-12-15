@@ -175,10 +175,15 @@ Give prvillege as SU :
 
 > $ sudo visudo
 
+ADD THIS SPECIFIC LINE IN THE FILE :
+
 ```
-ADD THIS SPECIFIC LINE IN THE FILE : 
 >	your_username    ALL=(ALL) ALL
 ```
+
+Check that the user has been correctly added :
+
+> $ sudo getent group sudo
 
 ---
 
@@ -274,4 +279,7 @@ Add forward rule for VirtualBox :
 Now you can control your virtual machine from the host terminal!
 
 ---
- 
+
+#### :heavy_check_mark: Configuring sudo :
+
+---
