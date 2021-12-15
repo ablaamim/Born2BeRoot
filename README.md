@@ -77,10 +77,24 @@ a separate computer with virtual hardware (All simulated through the hypervisor)
 
 > A : It is easier to install and configure than CENTOS.
 
-> Q : What is the difference between Debian and CENTOS :
+> Q : What is the difference between Debian and CENTOS ?
 
 > A : Debian, in addition to being more user-friendly, has a wide distribution, so its support is easier. CentOs, on the other hand,
  is aimed at the business sector, having more stability, but with less support and updates.
+
+> Q : The purpose of a virtual machine ?
+
+> A : It is as said in the previous question, a "sandboxed environement" which makes it perfect for testing application and pentesting
+Operating systems without the need of reseting your machine, you can easily switch between OS to another.
+
+> Q : What is the diffrence between apt and aptitude ?
+
+> A : Aptitude uis a high-level package-manager, it integrates the fonctionnalities of apt-cache and apt-mark, other than that
+it has a GUI, while apt is a low-level package-manager it only supports command-line.
+
+> Q : What is apparmor ?
+
+> A : it is a security Kernel module that restricts access to applications [Mandatory access control].
 
 ---
 
@@ -88,9 +102,9 @@ a separate computer with virtual hardware (All simulated through the hypervisor)
 
 ---
 
-• In order to create a virtual disk you should use goinfre as your machine image folder.
+• In order to create a virtual disk you should use "goinfre/username" as your machine image folder.
 
-• You should select "Install" option, without GRAPHICAL USER INTERFACE.
+• You should select "Install" option, without GRAPHICAL USER INTERFACE OF COURSE.
 
 • Hostname : yourlogin42 [intra].
 
@@ -107,8 +121,8 @@ Now you must choose your available free space to start partitioning.
 GO on Create new partition for \boot with a specified size.
 Choose primary(this is a Standard Partition) at the beggining of the available space.
 
-• To set up the Logical Volumes you need to undestand the basics of what a LVM really is (see below for more on LVM). 
-You will choose the next available free space and configure it as a 'physical volume for encryption'. 
+• To set up the Logical Volumes you need to undestand the basics of what a LVM really is.
+You will choose the next available free space and configure it as a 'physical volume for encryption'.
 Then, you must choose to 'configure encrypted volumes'>'created encrypted volumes'>'choose volumes to encrypt'>'finish' so that the partition will be overwritten 
 with random data. 
 When it is done, you will be asked to type in the passphrase to protect your Encrypted Disk.
@@ -126,6 +140,8 @@ Click on 'Finish'. At last, don't forget to mount the volumes by clicking on eac
 GUIs are explicitily forbidden and are, altogether, very much dispensable.
 
 • Install the GRUB boot loader and, when that's done, finally reboot your new system so you're now all set!
+
+> Now we can untitle you ready to begin your journey as a sysadmin fellow.
 
 ---
 
