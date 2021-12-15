@@ -248,12 +248,12 @@ Add forward rule for VirtualBox :
 ```
 **************************************************************************
 * Protocol       Host IP       Host Port       Guest IP       Guest Port *
-* TCP            127.0.0.1     4242            10.0.2.15      4242       *
+* TCP            127.0.0.1     4242            		      4242       *
 **************************************************************************
 ```
 
 > 4. In your host (physical) machine open Terminal and run
-[ssh <vmusername>@localhost -p 4242]
+[ssh <username>@localhost -p 4242]
 
 Now you can control your virtual machine from the host terminal!
 

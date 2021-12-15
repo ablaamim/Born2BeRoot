@@ -1,0 +1,423 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    notes.txt                                          :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ablaamim <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/12/15 06:12:08 by ablaamim          #+#    #+#              #
+#    Updated: 2021/12/15 06:12:11 by ablaamim         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+RANDOM NOTES!
+
+Setting up the server
+During the server configuration process, it is recommended to be logged in as root to have full access to all editing tools necessary to create the project.
+
+All steps presented here strictly follow the PDF provided by 42 for the creation of born2beroot.
+
+
+~Basic Settings
+Operational system
+See the operating system installed on your VM.
+
+$	head -n 2 /etc/os-release	
+$	cat /etc/os-release	
+
+memory allocation
+
+Check if the memory partitioning is correct using the lsblk command.
+
+$	lsblk
+If there is any discrepancy between your memory allocation and the one informed by the project's PDF, it will be necessary to restart the VM creation process.
+
+
+~Package Manager
+The apt is a level inferiorque package manager does not have a graphical interface.
+
+Even with two package manager options, apt is already installed as the default package manager in Debian .
+
+Checking the apt Installation
+As Debian's default package manager you only need to verify your installation.
+
+$	apt-get update
+
+~Sudo Setup and Installation
+Installing or Sudo
+Perform the sudo installation.
+
+$	apt-get install sudo
+Check the sudo installation.
+
+$	dpkg -l | grep sudo
+Adding/Removing a User to Sudo
+Add the user root to the Sudo group. This process can be done to add any user to the group.
+
+$	gpasswd -a <username> sudo
+Check that the user has been correctly added to the Sudo group.
+
+$	getent group sudo
+When adding a new user to the Sudo group it is necessary to restart your machine and check the group's instructions.
+
+$	reboot
+$	sudo -v
+Check the Sudo group privileges.
+
+$	sudo apt update
+If necessary, it is possible to remove a user from the Sudo group.
+
+$	gpasswd -d <username> sudo
+Configuring Sudo
+Create a new directory to record group logins and logouts.
+
+$	sudo mkdir /var/log/sudo
+Open the Sudo configuration file, either via the command or from the directory.
+
+$	sudo visudo -f etc/sudoers.d/<file>	
+$	sudo visudo				
+Configure inbound authentication attempts.
+
+Defaults	passwd_tries = 3
+Defaults	badpass_message = "WRONG PASSWORD"
+Record group logins and logouts.
+
+Defaults	logfile="/var/log/sudo/<filename>"
+Defaults	log_input, log_output
+Defaults	iolog_dir="/var/log/sudo"
+Add Requiretty by enabling TTY mode.
+
+Defaults	requiretty
+Finally, change the secure_path path.
+
+the old way will be secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin:
+
+Defaults	secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
+
+~SSH and Firewall Settings (UFW)
+Installing and Configuring SSH
+Perform the SSH installation.
+
+$	apt install openssh-server
+Check the SSH installation.
+
+$	dpkg -l | grep ssh
+Go to the directory where SSH was installed and start configuring the program.
+
+$	nano etc/ssh/sshd_config
+SSH settings are simple and require small changes to existing code lines.
+
+In line 13 we will have the comment: #Port 22.
+
+13	Port 4242
+On line 32 we will have the comment: #PermitRootLogin prohibit-password.
+
+32	PermitRootLogin no
+Finally, check if the changes were successful.
+
+$	service ssh status
+Installing and Configuring UFW
+Perform the UFW installation.
+
+$	apt install ufw
+Enable UFW.
+
+$	ufw enable
+Allow connections to your server through port 4242.
+
+$	ufw allow 4242
+Check the UFW settings.
+
+$	dpkg -l | grep ufw
+$	ufw status
+
+~User Settings
+Password Policy - Usage Time
+Access the directory where the password settings are present.
+
+$	nano /etc/login.defs
+To establish a strong password policy it is necessary to modify some parameters already pre-established by Debian.
+
+On line 160 change the time in days that your password will expire. Change from 99999 to 30.
+
+160		PASS_MAX_DAYS   30
+On line 161 change the delay in which your password can be changed. Change from 0 to 2.
+
+161		PASS_MIN_DAYS   2
+On line 162 add an alert message 7 days before your password expires.
+
+162		PASS_WARN_AGE   7
+Password Policy - Strong Password
+Install the libpam-pwquality plugin, responsible for monitoring a strong password policy.
+
+$	apt install libpam-pwquality
+Go to the directory where libpam-pwquality was installed.
+
+$	nano /etc/pam.d/common-password
+To establish a strong password policy it is necessary to add some rules to the plugin.
+
+On line 25 you should add the rules line below. The old rule, which should be replaced will be:25 password requisite pam_pwquality.so retry=3
+
+25	password	requisite	pam_pwquality.so retry=3 minlen=10 ucredit=-1 dcredit=-1 maxrepeat=3 reject_username difok=7 enforce_for_root
+Finally, check if the "plugin" was installed correctly.
+
+$	dpkg -l | grep libpam-pwquality
+Checking Your Users
+If it is necessary to create a new user, the command below must be used.
+
+$	adduser <username>
+If it is necessary to remove a user, the command below must be used.
+
+$	deluser <username>
+To verify the existence of a user, use the code below.
+
+$	getent passwd <username>
+To check how long before a user's password is about to expire use the code below.
+
+$	chage -l <username>
+managing groups
+Continuing the project, the new 'user42' group should be created.
+
+$	addgroup user42
+To delete an existing group, use the code below.
+
+$	delgroup <group_name>
+To verify the existence of a group, it is necessary to access the group directory.
+
+$	cat etc/group
+To verify if a user was correctly added to a group, use the code below.
+
+$	getent group user42
+
+~Cron Setup
+Cron Rules
+Access Cron settings.
+
+$	crontab -e
+Set up a rule so that a Script is transmitted every 10min.
+
+On line 23 you should add the rules line below. The old rule, which should be replaced will be:23 # m h dom mon dow command
+
+23		*/10 * * * * sh /path/to/script
+Script
+Create a new directory to store the script that will be transmitted via Cron.
+
+$	mkdir scripts
+Access your newly created folder to create (copy and paste) a Shell code that will transmit some basic information about your VM.
+
+echo -ne "ARCHITECTURE: "; uname -a
+echo -ne "CPU PHYSICAL: "; grep -c processor /proc/cpuinfo
+echo -ne "VIRTUAL CPU: "; cat /proc/cpuinfo | grep processor | wc -l
+echo -ne "MEMORY USAGE: "; free -m | awk 'NR==2{printf "%s/%sMB (%.2f%%)\n", $3,$2,$3*100/$2}'
+echo -ne "DISK USAGE: "; df -h | awk '$NF=="/"{printf "%d/%dGB (%s)\n", $3,$2,$5}'
+echo -ne "CPU LOAD: "; top -bn1 | grep load | awk '{printf"%.2f%%\n", $(NF-2)}'
+echo -ne "LAST BOOT: "; who | awk '{printf $3 }' | tr '\n' ' ' && who | awk '{printf $4}'
+echo -ne "\nLVM USE: "; if cat /etc/fstab | grep -q "/dev/mapper/"; then echo "yes"; else echo "no";fi
+echo -ne "CONNEXIONS TCP: "; cat /proc/net/tcp | wc -l | wak '{print $1-1}' | tr '\n' ' ' && echo "ESTABLISHED"
+echo -ne "USER LOG: "; w | wc -l | awk '{print$1-2}'
+echo -ne "NETWORK: "; echo -n "IP" && ip route list | grep default | awk '{print $3}' | tr '\n' ' ' && echo -n "9" && ip link show | grep link/ether | awk '{print $2}' | tr '\n' ')' && printf "\n"
+echo -ne "SUDO COUNTER: "; journalctl _COMM=sudo | grep COMMAND | wc -l | tr '\n' ' ' && echo Comands
+printf "\n"
+If you want to test the functionality of the script, use the code below.
+
+$	bash scripts/monitoring.sh
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Simple Setup
+Check if UFW is enabled.
+
+In the terminal execute the command ufw status.
+
+
+Make sure SSH is enabled.
+
+In the terminal execute the command service ssh status.
+
+
+Check that the operating system is chosen correctly.
+
+In the terminal execute the command uname -a.
+
+
+
+User's
+Check that the user created by the evaluator with the name "login42" is present in the groups "sudo" and "user42".
+
+In the terminal execute the command getent group user42and then the command getent group sudo.
+
+
+Create a new user and check if the strong password policy is in place.
+
+In the terminal execute the command adduser <username>.
+
+
+How did you add the rules to create a password policy?
+
+In the terminal, access the libpam-pwquality directory using the command nano /etc/pam.d/common-password.
+
+The rules in line 25 are responsible for the password policy, each of which means:
+
+retry = how many times can I get the password wrong;
+minlen = minimum password length;
+ucredit = number of characters in uppercase;
+dcredit = number of numbers;
+maxrepeat = how many times a character can repeat itself;
+reject_username = do not allow your username to be present in the password;
+difok = when changing password, how many characters can be the same;
+enforce_for_root = does not allow a user to change the root password.
+
+Create a new group called "evaluation" and add the new user to it.
+
+In the terminal execute the command addgroup evaluationand then to add the user to the new group use the command gpasswd -a <username> evaluation.
+
+To verify if the user was correctly added to the group, execute the command getent group evaluation.
+
+
+Why should we use a password policy?
+
+The password policy is to prevent you from being hacked, thus preventing data loss or third-party access to your server.
+
+
+
+Hostname and Partitions
+Check that the hostname is formatted correctly.
+
+In the terminal execute the command hostname.
+
+
+Reset the hostname.
+
+In the terminal execute the command hostnamectl set-hostname <username>. Then use the command rebootto restart your VM and check the new hostname.
+
+
+View your VM's memory partitions.
+
+In the terminal execute the command lsblk.
+
+
+What is LVM and what is its function?
+
+The Logical Volume Manager is responsible for managing the hard disk through logical groupings. The advantage of its use is due to the ease of memory resizing and general modifications.
+
+
+
+Sudo
+Check that Sudo is correctly installed.
+
+In the terminal execute the command dpkg -l | grep sudo.
+
+
+Add your new user to the Sudo group and verify that the operation went correctly.
+
+In the terminal execute the command adduser <username> sudoand then use the command getent group sudo.
+
+
+What is Sudo?
+
+sudo is a "super user", that is, an administrator who can perform tasks restricted to the root user. In addition to everything already seen so far, it is possible to mention the command as an example of Sudo's action apt update.
+
+
+Access the folder /var/log/sudo and check if there is a history of commands used by the Sudo group.
+
+Access the folder cat /var/log/sudo/sudo.logand check the command history.
+
+In your terminal run the command apt update.
+
+In the folder cat /var/log/sudo/sudo.logcheck if a new directory has been created.
+
+
+
+UFW
+Check if the UFW is correctly installed.
+
+In the terminal execute the command dpkg -l | grep ufw.
+
+
+Check if the UFW is working properly.
+
+In the terminal execute the command ufw status.
+
+
+What is UFW?
+
+Uncomplicated Firewall is a simplified firewall, which aims to filter internet traffic or SSH access.
+
+
+Add port 8080 to the UFW and check if it is active.
+
+In the terminal execute the command ufw allow 8080and then use the command ufw status.
+
+
+Delete a port 8080.
+
+The command to delete a port requires its position within the rules list. In the example below, the 8080 rule, which we want to delete, is in position 2 and 4.
+
+1 4242
+2 8080
+3 4242 (v6)
+4 8080 (v6)
+When discovering the position of port 8080, execute the command ufw delete #.
+
+
+
+SSH
+Check that SSH is correctly installed.
+
+In the terminal execute the command dpkg -l | grep ssh.
+
+
+Check that SSH is working properly.
+
+In the terminal execute the command service ssh status.
+
+
+What is SSH?
+
+SSH is a security tool that allows the exchange of data between a client and a remote server. Thanks to its encrypted communication between peers it becomes the most secure and dynamic way to carry out this activity.
+
+
+Through another device, use port 4242 and log in with the newly created user.
+
+Inside your VM locate your ip address via the ifconfigor command ifconfig | grep inet | sed 1q.
+
+Through your computer's CMD or PowerShell, type the command ssh <username>@<ip-address> -p 4242and login.
+
+
+Finally, through another device, use port 4242 and try to log in as the root user.
+
+Access must be denied thanks to the rule created in our sshd_config file.
+
+
+
+Script Monitoring
+How does the script work?
+
+In the terminal go to your script folder and explain your code line by line...
+
+
+Détails
+
+To run the code without waiting the 10min run the command bash monitoring.sh
+
+
+Enabling and Disabling Cron
+
+One of the ways to disable cron is by accessing its settings through the command crontab -eand commenting out the 23 line of code.
+
+The second way to disable cron is to run the following command: etc/init.d/cron stop.
+
+
+What is the Cron?
+
+Cron is a program that works in the background creating schedules, which act according to the configurations created by you.
+
+
+How was Contrab configured?
+
+Crontab is configured informing the minutes, hours, days, months and week in which you design the configured script to be run.
+
+The configuration was made so that every 10 minutes of all hours, days, months and weeks our script is executed.
+
+To check the crontab use the command crontab -e.
